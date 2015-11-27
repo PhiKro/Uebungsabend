@@ -1,17 +1,17 @@
 
 public class Konto {
 	
-	private static String Kontoinhaber;
-	private static String IBAN;
-	private static String BIC;
-	private static double Kontostand;
+	private String Kontoinhaber;
+	private String IBAN;
+	private String BIC;
+	private double Kontostand;
 	
 	public Konto(String Inhaber, String IBAN,String BIC)
 	{
-		Kontoinhaber =Inhaber;
-		Konto.IBAN = IBAN;
-		Konto.BIC = BIC;
-		Konto.Kontostand = 0.0;
+		Kontoinhaber = Inhaber;
+		this.IBAN = IBAN;
+		this.BIC = BIC;
+		Kontostand = 0.0;
 	}
 
 	public void aufbuchen(double betrag)
@@ -31,15 +31,26 @@ public class Konto {
 			}
 	}
 
-	public static String getIBAN() {
-		return IBAN;
-	}
-	public static String getBIC() {
-		return BIC;
-	}
-	public static double getKontostand() {
-		System.out.println("Der Kontostand Beträgt: "+Kontostand +"€"); 
-		return Kontostand;
-		}
+	public String getIBAN() {
+		return IBAN;}
 	
-}
+	public String getBIC() {
+		return BIC;}
+	
+	public double getKontostand() {
+		System.out.println("Der Kontostand Beträgt: "+Kontostand +"€"); 
+		return Kontostand;}
+	
+	public String getOwner(){
+	return Kontoinhaber;}
+	
+	public void Kontodrucker(){
+	System.out.println("*********************************");
+	System.out.println("Kontoinhaber: " + Kontoinhaber);
+	System.out.println("IBAN: " + IBAN);
+	System.out.println("BIC: " + BIC);
+	System.out.println("Kontostand: " + Kontostand);
+	System.out.println("*********************************");
+	System.out.println("");
+	}
+	}
